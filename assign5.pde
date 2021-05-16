@@ -585,8 +585,8 @@ String convertFramesToTimeString(int frames){	// Requirement #4
 }
 
 color getTimeTextColor(int frames){				// Requirement #5
-	int secs=floor(frames/60%60);
-  int mins=floor(frames/3600);
+  int secs=nf(floor(frames/60%60),2);
+  int mins=nf(floor(frames/3600),2);
   
   if(mins>=2){
   return #00ffff;
