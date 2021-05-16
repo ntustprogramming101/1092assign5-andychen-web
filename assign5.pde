@@ -574,12 +574,13 @@ boolean isHit(float ax, float ay, float bx, float by){
 }
 
 String convertFramesToTimeString(int frames){	// Requirement #4
-	  int secs=frames/60%60;
-    int mins=frames/3600;
+    int secs=floor(frames/60%60);
+    int mins=floor(frames/3600);
+    
     if (secs<10){
-      return "0"+mins +":"+"0"+secs;
+      return "0"+mins +":"+"0"+str(secs);
     }
-    return "0"+mins+":"+secs;
+    return "0"+mins+":"+str(secs);
     
     
 }
