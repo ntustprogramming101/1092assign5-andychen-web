@@ -314,7 +314,7 @@ void draw() {
       
       if(isHit(clockX[i],clockY[i],playerX,playerY)){
       clockX[i]=-1000;
-      addTime(CLOCK_BONUS_SECONDS);
+      addTime(15*60);
       }
       
     }
@@ -585,8 +585,8 @@ String convertFramesToTimeString(int frames){	// Requirement #4
 }
 
 color getTimeTextColor(int frames){				// Requirement #5
-	int secs=frames/60%60;
-  int mins=frames/3600;
+	int secs=floor(frames/60%60);
+  int mins=floor(frames/3600);
   
   if(mins>=2){
   return #00ffff;
